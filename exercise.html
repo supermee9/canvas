@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id = "mycanvas" width = "500" height = "500" style = "border: 1px solid black">
+    </canvas>
+    <br/>
+    <button id = "blackButton" onclick = black()>Black</button>
+    <button id = "redButton" onclick = red()>Red</button>
+    <button id = "blueButton" onclick = blur()>Blue</button>
+    <button id = "greenButton" onclick = green()>Green</button>
+    <button id = "yellowButton" onclick = yellow()>Yellow</button>
+    <button id = "pinkButton" onclick = pink()>pink</button>
+    <br/>
+    <button id = "faceButton" onclick = faceDraw()>face</button>
+    <button id = "mouthButton" onclick = mouthDraw()>mouth</button>
+    <button id = "eyesButton" onclick = eyesDraw()>eyes</button>
+
+    
+
+    <script>
+        let canvas = document.getElementById("mycanvas");
+        let context = canvas.getContext("2d");
+        function black(){
+            x = 'black'
+        }
+        function red(){
+            x = 'red'
+        }
+        function blue(){
+            x = 'blue'
+        }
+        function green(){
+            x = 'green'
+        }
+        function yellow(){
+            x = 'yellow'
+        }
+        function pink(){
+            x = 'pink'
+        }
+            
+
+        function faceDraw() {
+            context.strokeStyle = x
+            context.beginPath();
+            context.arc(250,250,200,0, 2*Math.PI);
+            context.stroke();
+        }
+        
+        function eyesDraw() {
+            context.strokeStyle = x
+            context.beginPath();
+            context.arc(166,166,30,0, 2*Math.PI);
+            context.stroke();
+
+            context.beginPath();
+            context.arc(334,166,30,0, 2*Math.PI);
+            context.stroke();
+        }
+        
+        function mouthDraw() {
+            context.strokeStyle = x
+            context.beginPath();
+            context.arc(250,250,100,0, Math.PI);
+            context.stroke();
+        }
+        
+
+    </script>
+</body>
+</html>
