@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id = "mycanvas" width = "1000" height = "1000" style = "border: 1px solid black">
+    </canvas>
+    <br/>
+    <button class = 'buttons' id = "blackButton" onclick = black()>Black</button>
+    <button class = 'buttons' id = "redButton" onclick = red()>Red</button>
+    <button class = 'buttons' id = "blueButton" onclick = blue()>Blue</button>
+    <button class = 'buttons' id = "greenButton" onclick = green()>Green</button>
+    <button class = 'buttons' id = "yellowButton" onclick = yellow()>Yellow</button>
+    <button class = 'buttons' id = "pinkButton" onclick = brown()>brown</button>
+    <br/>
+    <button class = 'buttons' id = "roofButton" onclick = roof()>roof</button>
+    <button class = 'buttons' id = "wallButton" onclick = wall()>wall</button>
+    <button class = 'buttons' id = "windowsButton" onclick = windows()>windows</button>
+    <button class = 'buttons' id = "doorButton" onclick = door()>door</button>
+
+    
+    <script>
+        let canvas = document.getElementById("mycanvas");
+        let context = canvas.getContext("2d");
+        function black(){
+            x = 'black'
+        }
+        function red(){
+            x = 'red'
+        }
+        function blue(){
+            x = 'blue'
+        }
+        function green(){
+            x = 'green'
+        }
+        function yellow(){
+            x = 'yellow'
+        }
+        function brown(){
+            x = 'brown'
+        }
+
+
+        // walll
+        function wall(){
+            context.strokeStyle = 'black'
+            context.beginPath();
+            context.fillStyle = x;
+            context.fillRect(100,400,600,500);
+            context.lineWidth = 10;
+            context.strokeRect(100,400,600,500);
+        }
+        
+
+        // roof
+        function roof(){
+            context.strokeStyle = 'black'
+            context.beginPath();
+            context.moveTo(100,400);
+            context.lineTo(400,50);
+            context.lineTo(700,400);
+            context.closePath;
+            context.fillStyle = x;
+            context.fill();
+            context.lineWidth = 10;
+            context.moveTo(100,400);
+            context.lineTo(400,50);
+            context.lineTo(700,400);
+            context.stroke();
+        }
+
+
+        // door
+        function door(){
+            context.strokeStyle = x
+            context.lineWidth = 4;
+            context.beginPath();
+            context.moveTo(150,900);
+            context.lineTo(150,725);
+            context.lineTo(300,725);
+            context.lineTo(300,900);
+            context.stroke();
+            context.beginPath();
+            context.arc(215,815.5,5,0, 2*Math.PI);
+            context.stroke();
+
+            context.beginPath();
+            context.arc(235,815.5,5,0, 2*Math.PI);
+            context.stroke();
+        }
+        
+        // windows
+        function windows(){
+            context.beginPath();
+            context.fillStyle = x;
+            context.fillRect(150,450,100,75);
+            context.fillRect(260,450,100,75);
+            context.fillRect(150,530,100,75);
+            context.fillRect(260,530,100,75);
+
+            context.fillRect(550,450,100,75);
+            context.fillRect(440,450,100,75);
+            context.fillRect(550,530,100,75);
+            context.fillRect(440,530,100,75);
+
+            context.fillRect(550,760,100,75);
+            context.fillRect(440,760,100,75);
+            context.fillRect(550,680,100,75);
+            context.fillRect(440,680,100,75);
+        }
+
+    </script>
+</body>
+</html>
